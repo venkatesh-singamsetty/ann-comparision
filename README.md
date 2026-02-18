@@ -71,4 +71,7 @@ Epochs  | Optimizer  | Time(s)  | Best Acc   | Epoch  | Best Loss  | Epoch  | Fi
 100     | adadelta   | 49.68    | 0.7674     | 100    | 0.6075     | 100    | 0.7674     | 0.6075    
 100     | adamax     | 47.03    | 0.8643     | 98     | 0.3388     | 100    | 0.8637     | 0.3388    
 100     | rmsprop    | 44.39    | 0.8664     | 83     | 0.3339     | 100    | 0.8644     | 0.3339    
-100     | sgd        | 41.6     | 0.8639     | 83     | 0.3385     | 99     | 0.862      | 0.3387   
+100     | sgd        | 41.6     | 0.8639     | 83     | 0.3385     | 99     | 0.862      | 0.3387  
+
+
+Based on the metrics provided, the RMSprop optimizer with 100 Epochs is the absolute best model in terms of raw performance, while Adam with 50 Epochs is the most efficient.
