@@ -1,6 +1,30 @@
 # ann-comparision
 
 ## Local MacBook Prod
+### Recommended: Install the Mac-optimized version
+```bash
+python3.12 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+
+pip install tensorflow-macos
+pip install tensorflow-metal  # This allows usage of the Mac GPU
+pip install pandas numpy scikit-learn
+
+python ann.py
+```
+
+## Windows
+```bash
+python3.12 -m venv venv
+source venv/bin/activate
+pip install --upgrade pip
+
+# Standard installation
+pip install tensorflow
+pip install pandas numpy scikit-learn
+```
+
 Epochs  | Optimizer  | Time(s)  | Best Acc   | Epoch  | Best Loss  | Epoch  | Final Acc  | Final Loss
 ------- | ---------- | -------- | ---------- | ------ | ---------- | ------ | ---------- | ----------
 10      | adam       | 1.45     | 0.8043     | 10     | 0.425      | 10     | 0.8043     | 0.425     
@@ -30,3 +54,21 @@ uploaded = files.upload()
 ```
 Epochs  | Optimizer  | Time(s)  | Best Acc   | Epoch  | Best Loss  | Epoch  | Final Acc  | Final Loss
 ------- | ---------- | -------- | ---------- | ------ | ---------- | ------ | ---------- | ----------
+10      | adam       | 6.82     | 0.8209     | 10     | 0.42       | 10     | 0.8209     | 0.42      
+10      | adagrad    | 4.83     | 0.7575     | 10     | 0.6055     | 10     | 0.7575     | 0.6055    
+10      | adadelta   | 5.93     | 0.2481     | 10     | 0.9737     | 10     | 0.2481     | 0.9737    
+10      | adamax     | 5.79     | 0.796      | 4      | 0.4405     | 10     | 0.796      | 0.4405    
+10      | rmsprop    | 4.94     | 0.833      | 10     | 0.4034     | 10     | 0.833      | 0.4034    
+10      | sgd        | 5.35     | 0.7956     | 7      | 0.4558     | 10     | 0.7951     | 0.4558    
+50      | adam       | 24.36    | 0.8648     | 46     | 0.3362     | 49     | 0.8619     | 0.3365    
+50      | adagrad    | 23.0     | 0.794      | 50     | 0.5573     | 50     | 0.794      | 0.5573    
+50      | adadelta   | 25.51    | 0.796      | 1      | 0.552      | 50     | 0.796      | 0.552     
+50      | adamax     | 24.24    | 0.8597     | 50     | 0.347      | 50     | 0.8597     | 0.347     
+50      | rmsprop    | 23.77    | 0.862      | 49     | 0.3425     | 49     | 0.8593     | 0.3425    
+50      | sgd        | 22.11    | 0.8356     | 49     | 0.3965     | 50     | 0.8355     | 0.3965    
+100     | adam       | 48.37    | 0.864      | 62     | 0.3367     | 100    | 0.8624     | 0.3367    
+100     | adagrad    | 43.52    | 0.796      | 1      | 0.4655     | 100    | 0.796      | 0.4655    
+100     | adadelta   | 49.68    | 0.7674     | 100    | 0.6075     | 100    | 0.7674     | 0.6075    
+100     | adamax     | 47.03    | 0.8643     | 98     | 0.3388     | 100    | 0.8637     | 0.3388    
+100     | rmsprop    | 44.39    | 0.8664     | 83     | 0.3339     | 100    | 0.8644     | 0.3339    
+100     | sgd        | 41.6     | 0.8639     | 83     | 0.3385     | 99     | 0.862      | 0.3387   
