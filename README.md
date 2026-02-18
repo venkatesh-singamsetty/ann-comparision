@@ -11,7 +11,7 @@ pip install tensorflow-macos
 pip install tensorflow-metal  # This allows usage of the Mac GPU
 pip install pandas numpy scikit-learn
 
-python ann.py
+python ann-optimizers.py
 ```
 
 ## Windows
@@ -23,30 +23,32 @@ pip install --upgrade pip
 # Standard installation
 pip install tensorflow
 pip install pandas numpy scikit-learn
+
+python ann-optimizers.py
 ```
 
 Epochs  | Optimizer  | Time(s)  | Best Acc   | Epoch  | Best Loss  | Epoch  | Final Acc  | Final Loss
 ------- | ---------- | -------- | ---------- | ------ | ---------- | ------ | ---------- | ----------
-10      | adam       | 1.45     | 0.8043     | 10     | 0.425      | 10     | 0.8043     | 0.425     
-10      | adagrad    | 1.27     | 0.7766     | 10     | 0.543      | 10     | 0.7766     | 0.543     
-10      | adadelta   | 1.37     | 0.4625     | 10     | 0.7072     | 10     | 0.4625     | 0.7072    
-10      | adamax     | 1.4      | 0.8026     | 10     | 0.436      | 10     | 0.8026     | 0.436     
-10      | rmsprop    | 1.3      | 0.8518     | 10     | 0.3575     | 10     | 0.8518     | 0.3575    
-10      | sgd        | 1.18     | 0.8087     | 10     | 0.4333     | 10     | 0.8087     | 0.4333    
-50      | adam       | 5.8      | 0.864      | 44     | 0.3363     | 50     | 0.8636     | 0.3363    
-50      | adagrad    | 5.62     | 0.7971     | 50     | 0.5672     | 50     | 0.7971     | 0.5672    
-50      | adadelta   | 5.64     | 0.6674     | 50     | 0.6365     | 50     | 0.6674     | 0.6365    
-50      | adamax     | 5.83     | 0.8577     | 50     | 0.3458     | 50     | 0.8577     | 0.3458    
-50      | rmsprop    | 5.63     | 0.8401     | 50     | 0.3789     | 50     | 0.8401     | 0.3789    
-50      | sgd        | 5.26     | 0.8596     | 48     | 0.3469     | 50     | 0.8583     | 0.3469    
-100     | adam       | 11.29    | 0.8662     | 95     | 0.3335     | 100    | 0.8652     | 0.3335    
-100     | adagrad    | 10.71    | 0.796      | 48     | 0.476      | 100    | 0.796      | 0.476     
-100     | adadelta   | 10.95    | 0.58       | 100    | 0.7323     | 100    | 0.58       | 0.7323    
-100     | adamax     | 11.26    | 0.8627     | 96     | 0.3379     | 100    | 0.8616     | 0.3379    
-100     | rmsprop    | 11.11    | 0.8655     | 92     | 0.3328     | 100    | 0.8655     | 0.3328    
-100     | sgd        | 10.27    | 0.8611     | 99     | 0.3437     | 100    | 0.8608     | 0.3437    
+10      | adam       | 1.66     | 0.8279     | 10     | 0.4099     | 10     | 0.8279     | 0.4099    
+10      | adagrad    | 1.5      | 0.6186     | 10     | 0.6541     | 10     | 0.6186     | 0.6541    
+10      | adadelta   | 1.63     | 0.6256     | 10     | 0.702      | 10     | 0.6256     | 0.702     
+10      | adamax     | 1.7      | 0.8073     | 10     | 0.4333     | 10     | 0.8073     | 0.4333    
+10      | rmsprop    | 1.53     | 0.8282     | 10     | 0.388      | 10     | 0.8282     | 0.388     
+10      | sgd        | 1.37     | 0.8105     | 10     | 0.4323     | 10     | 0.8105     | 0.4323    
+50      | adam       | 6.81     | 0.8618     | 46     | 0.3458     | 50     | 0.8608     | 0.3458    
+50      | adagrad    | 6.25     | 0.774      | 50     | 0.5202     | 50     | 0.774      | 0.5202    
+50      | adadelta   | 6.74     | 0.4579     | 50     | 0.8217     | 50     | 0.4579     | 0.8217    
+50      | adamax     | 6.74     | 0.8525     | 50     | 0.358      | 50     | 0.8525     | 0.358     
+50      | rmsprop    | 7.09     | 0.8643     | 45     | 0.34       | 50     | 0.8631     | 0.34      
+50      | sgd        | 6.21     | 0.8634     | 49     | 0.3429     | 50     | 0.8634     | 0.3429    
+100     | adam       | 13.85    | 0.8651     | 81     | 0.3356     | 97     | 0.8622     | 0.3362    
+100     | adagrad    | 13.18    | 0.7955     | 78     | 0.4555     | 100    | 0.7951     | 0.4555    
+100     | adadelta   | 13.62    | 0.5571     | 100    | 0.6747     | 100    | 0.5571     | 0.6747    
+100     | adamax     | 13.63    | 0.8645     | 74     | 0.3393     | 99     | 0.8626     | 0.3393    
+100     | rmsprop    | 12.89    | 0.8654     | 73     | 0.338      | 99     | 0.8634     | 0.3382    
+100     | sgd        | 11.8     | 0.863      | 90     | 0.3404     | 99     | 0.861      | 0.3406    
 
-Based on this specific dataset, the absolute best model is Adam trained for 100 epochs.
+The best model is a close tie between RMSprop and Adam at 100 epochs, but RMSprop takes the lead in overall accuracy
 
 ## Google Colab
 To upload `Churn_Modelling.csv`
@@ -74,6 +76,5 @@ Epochs  | Optimizer  | Time(s)  | Best Acc   | Epoch  | Best Loss  | Epoch  | Fi
 100     | adamax     | 47.03    | 0.8643     | 98     | 0.3388     | 100    | 0.8637     | 0.3388    
 100     | rmsprop    | 44.39    | 0.8664     | 83     | 0.3339     | 100    | 0.8644     | 0.3339    
 100     | sgd        | 41.6     | 0.8639     | 83     | 0.3385     | 99     | 0.862      | 0.3387  
-
 
 Based on the metrics provided, the RMSprop optimizer with 100 Epochs is the absolute best model in terms of raw performance, while Adam with 50 Epochs is the most efficient.
